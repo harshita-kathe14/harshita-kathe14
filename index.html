@@ -1,100 +1,673 @@
-# Hi there 👋, I'm Harshita Kathe
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-### 👩‍💻 IT Student | Aspiring Developer | Technology Enthusiast
+    <title>Harshita Kathe | Portfolio</title>
 
-Welcome to my GitHub profile! I am an enthusiastic IT student passionate about learning new technologies, developing practical projects, and improving my programming skills.
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-I enjoy exploring **Python, Web Development, Data Analytics, and Artificial Intelligence**. My goal is to build useful projects, strengthen my technical knowledge, and grow as a technology professional.
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
 
----
+        body {
+            font-family: Arial, sans-serif;
+            color: #263449;
+            line-height: 1.7;
+        }
 
-## 🚀 About Me
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-- 🎓 I am an IT student.
-- 💻 Interested in Python programming and web development.
-- 📊 Exploring Data Analytics and Data Science.
-- 🤖 Interested in Artificial Intelligence and Generative AI.
-- 🌱 Continuously learning and improving my technical skills.
-- 🎯 Focused on building practical projects and gaining experience.
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #e5eaf0;
+            z-index: 10;
+        }
 
----
+        nav {
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-## 🛠️ Technical Skills
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #17365D;
+            text-decoration: none;
+        }
 
-### Programming Languages
-- Python
-- HTML
-- CSS
-- JavaScript
+        .logo span,
+        .highlight {
+            color: #00A6A6;
+        }
 
-### Tools & Technologies
-- Git and GitHub
-- Visual Studio Code
-- Microsoft Excel
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
 
-### Areas of Interest
-- Data Analytics
-- Data Science
-- Web Development
-- Artificial Intelligence
-- Generative AI
+        .nav-links a {
+            color: #17365D;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
----
+        .nav-links a:hover {
+            color: #00A6A6;
+        }
 
-## 📂 My Projects
+        .menu {
+            display: none;
+            background: none;
+            border: none;
+            color: #17365D;
+            font-size: 25px;
+            cursor: pointer;
+        }
 
-### 1. 🛍️ Sky Dress Material Website
-A website project created to showcase dress materials in an attractive and organized way.
+        .hero {
+            min-height: 540px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 35px;
+            align-items: center;
+            padding-top: 55px;
+            padding-bottom: 55px;
+        }
 
-**Highlights:**
-- Product presentation
-- Website layout and design
-- Images and product display
-- User-friendly interface
+        .eyebrow {
+            color: #00A6A6;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-**Technologies:** HTML, CSS, JavaScript (as used in the project)
+        h1 {
+            color: #17365D;
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin: 15px 0;
+        }
 
-### 2. 🎓 Student Grade Management System
-A Python project designed to manage student marks and calculate grades.
+        .hero h2 {
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
 
-**Highlights:**
-- Student information management
-- Marks entry
-- Grade calculation
-- Result display
+        .description {
+            color: #667085;
+            font-size: 15px;
+        }
 
-**Technology:** Python
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
 
----
+        .btn {
+            display: inline-block;
+            padding: 12px 19px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-## 📚 Currently Learning
+        .primary {
+            background: #17365D;
+            color: white;
+        }
 
-- Python programming
-- Data Analytics
-- Data Visualization
-- SQL and databases
-- Generative AI
-- Software development
+        .secondary {
+            border: 1px solid #17365D;
+            color: #17365D;
+        }
 
----
+        .primary:hover {
+            background: #00A6A6;
+        }
 
-## 🎯 My Goals
+        .profile {
+            background: linear-gradient(145deg, #17365D, #285782);
+            color: white;
+            border-radius: 22px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 20px 45px #17365D25;
+        }
 
-- Build more real-world projects.
-- Improve my problem-solving skills.
-- Develop a strong GitHub portfolio.
-- Learn industry-relevant technologies.
-- Prepare for internships and future career opportunities.
+        .avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+            background: #00A6A6;
+            border: 5px solid white;
+            border-radius: 50%;
+            font-size: 38px;
+            font-weight: bold;
+        }
 
----
+        .profile p {
+            color: #dbe8f5;
+            font-size: 14px;
+            margin-top: 8px;
+        }
 
-## 🤝 Connect With Me
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
 
-- 💼 LinkedIn: [Visit my LinkedIn profile](https://www.linkedin.com/)
-- 🐙 GitHub: [harshita-kathe14](https://github.com/harshita-kathe14)
+        .tags span {
+            background: #ffffff20;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
 
----
+        section.content {
+            padding: 75px 0;
+        }
 
-### ✨ Thanks for visiting my profile!
+        .alternate {
+            background: #F4F8FC;
+        }
 
-*Learning, building, and growing one project at a time.* 🚀
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: #17365D;
+            font-size: 34px;
+            margin-top: 8px;
+        }
+
+        .section-title p:last-child {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .about-card {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            border: 1px solid #e5eaf0;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .about-card h3 {
+            color: #17365D;
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            border: 1px solid #e5eaf0;
+            border-radius: 14px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #17365D15;
+        }
+
+        .card .icon {
+            font-size: 30px;
+        }
+
+        .card h3 {
+            color: #17365D;
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #667085;
+            font-size: 13px;
+        }
+
+        .contact-card {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #e5eaf0;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .contact-card p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: #17365D;
+            font-weight: bold;
+            font-size: 13px;
+            margin: 12px 0 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dce3eb;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button.submit {
+            margin-top: 18px;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        #status {
+            margin-top: 12px;
+            color: #008080;
+            font-size: 13px;
+        }
+
+        footer {
+            background: #17365D;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        footer p {
+            color: #dbe8f5;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 750px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px 5%;
+                flex-direction: column;
+                border-bottom: 1px solid #e5eaf0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            section.content {
+                padding: 55px 0;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="container">
+        <a class="logo" href="#home">Harshita<span>.</span></a>
+
+        <button class="menu" id="menu" aria-label="Toggle navigation"
+                aria-expanded="false">☰</button>
+
+        <ul class="nav-links" id="links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero container" id="home">
+
+        <div>
+            <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hi, I'm <span class="highlight">Harshita Kathe</span></h1>
+
+            <h2>IT Student & Aspiring Web Developer</h2>
+
+            <p class="description">
+                I am an Information Technology student passionate about
+                learning new technologies, developing practical projects,
+                and improving my programming skills. I enjoy exploring
+                web development and creating useful digital experiences.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">Explore My Work</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="avatar">HK</div>
+            <h2>Harshita Kathe</h2>
+            <p>Information Technology Student</p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="content alternate" id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About <span class="highlight">Me</span></h2>
+                <p>A little introduction about myself.</p>
+            </div>
+
+            <div class="about-card">
+                <h3>Curious Mind. Creative Thinking.</h3>
+
+                <p>
+                    Hello! I'm Harshita Kathe, an Information Technology
+                    student interested in programming and web development.
+                </p>
+
+                <p>
+                    I enjoy learning new tools, improving my coding skills,
+                    and building projects to gain practical experience.
+                </p>
+
+                <p>
+                    My goal is to become a skilled IT professional and
+                    continue learning new technologies.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content" id="skills">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="eyebrow">WHAT I'M LEARNING</p>
+                <h2>My <span class="highlight">Skills</span></h2>
+                <p>Technologies I practise and explore.</p>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <div class="icon">🌐</div>
+                    <h3>HTML5</h3>
+                    <p>Creating the structure of web pages.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>Designing attractive and responsive websites.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Learning interactive website development.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>C / C++</h3>
+                    <p>Practising programming fundamentals.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Exploring coding and problem-solving.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🛠️</div>
+                    <h3>GitHub</h3>
+                    <p>Learning to manage and publish projects.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="content alternate" id="projects">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="eyebrow">MY LEARNING JOURNEY</p>
+                <h2>Featured <span class="highlight">Projects</span></h2>
+                <p>Projects to showcase my learning and development.</p>
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+                    <div class="icon">✦</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A website to introduce myself and showcase my
+                        technical skills, interests, and goals.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">▦</div>
+                    <h3>SKY Dress Material</h3>
+                    <p>
+                        A business website project for displaying dress
+                        materials, collections, and shop information.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">⌘</div>
+                    <h3>Student Grade Management</h3>
+                    <p>
+                        A student project concept for organising student
+                        information and calculating academic grades.
+                    </p>
+                </div>
+
+            </div>
+
+            <p style="text-align:center; font-size:12px; margin-top:20px;">
+                Update these descriptions to reflect your actual project status.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="content" id="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <p class="eyebrow">LET'S CONNECT</p>
+                <h2>Contact <span class="highlight">Me</span></h2>
+                <p>Have a project idea? Let's connect.</p>
+            </div>
+
+            <div class="contact-card">
+                <p>
+                    Fill in this form to try the portfolio's
+                    front-end contact feature.
+                </p>
+
+                <form id="contactForm">
+
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="4"
+                              placeholder="Write your message"
+                              required></textarea>
+
+                    <button class="btn primary submit" type="submit">
+                        Send Message
+                    </button>
+
+                    <p id="status" role="status" aria-live="polite"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <a class="logo" href="#home" style="color:white;">
+        Harshita<span>.</span>
+    </a>
+
+    <p>Learning, creating, and growing every day.</p>
+
+    <p>© <span id="year"></span> Harshita Kathe. All rights reserved.</p>
+</footer>
+
+<script>
+    const menu = document.getElementById("menu");
+    const links = document.getElementById("links");
+
+    menu.addEventListener("click", function () {
+        const open = links.classList.toggle("active");
+
+        menu.textContent = open ? "✕" : "☰";
+        menu.setAttribute("aria-expanded", open);
+    });
+
+    document.querySelectorAll("#links a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            links.classList.remove("active");
+            menu.textContent = "☰";
+            menu.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener(
+        "submit",
+        function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !message) {
+                document.getElementById("status").textContent =
+                    "Please fill in all fields.";
+                return;
+            }
+
+            document.getElementById("status").textContent =
+                "Thank you, " + name +
+                "! This demo form does not send messages yet.";
+
+            this.reset();
+        }
+    );
+</script>
+
+</body>
+</html>
+
+
+
+
+
