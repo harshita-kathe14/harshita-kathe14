@@ -737,23 +737,23 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+        <section class="content" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <p class="eyebrow">Let's connect</p>
+            <h2>Contact <span class="highlight">Me</span></h2>
+            <p>Have a project idea? Let's connect.</p>
+        </div>
 
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const status = document.getElementById("status");
-
-        if (!name) {
-            status.textContent = "Please enter your name.";
-            return;
-        }
-
-        status.textContent = "Thank you, " + name +
-            "! This demo form does not send messages yet.";
-
-        this.reset();
-    });
+        <div class="contact-card">
+            <p>Click below to email me.</p>
+            <a class="btn primary" href="mailto:katheharshita@gmail.com">
+                ✉ Email Me
+            </a>
+        </div>
+    </div>
+</section>
 </script>
 </body>
 </html>
