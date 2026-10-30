@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Harshita Kathe | Portfolio</title>
 
     <style>
+        :root {
+            color-scheme: dark;
+            --bg: #080d18;
+            --surface: #101827;
+            --text: #edf4ff;
+            --muted: #9aa9bd;
+            --accent: #53e0c1;
+            --purple: #8b7cff;
+            --line: rgba(148, 163, 184, .16);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -19,101 +29,112 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            color: #263449;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background:
+                radial-gradient(ellipse at 14% 8%, rgba(83, 224, 193, .10), transparent 32%),
+                radial-gradient(ellipse at 88% 27%, rgba(139, 124, 255, .10), transparent 34%),
+                var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             line-height: 1.7;
         }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: min(90%, 1100px);
             margin: auto;
         }
 
         header {
-            background: white;
             position: sticky;
-            top: 0;
-            border-bottom: 1px solid #e5eaf0;
             z-index: 10;
+            top: 0;
+            background: rgba(8, 13, 24, .82);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px);
         }
 
         nav {
             min-height: 75px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
+            color: var(--text);
             font-size: 26px;
-            font-weight: bold;
-            color: #17365D;
+            font-weight: 800;
+            letter-spacing: -.7px;
             text-decoration: none;
         }
 
         .logo span,
         .highlight {
-            color: #00A6A6;
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
-            gap: 22px;
+            gap: 25px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #17365D;
-            text-decoration: none;
+            color: #c1ccdb;
             font-size: 14px;
+            text-decoration: none;
+            transition: color .2s ease;
         }
 
         .nav-links a:hover {
-            color: #00A6A6;
+            color: var(--accent);
         }
 
         .menu {
             display: none;
+            border: 0;
             background: none;
-            border: none;
-            color: #17365D;
+            color: var(--text);
             font-size: 25px;
             cursor: pointer;
         }
 
         .hero {
-            min-height: 540px;
+            min-height: 650px;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 35px;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 50px;
             align-items: center;
-            padding-top: 55px;
-            padding-bottom: 55px;
+            padding: 80px 0 90px;
         }
 
         .eyebrow {
-            color: #00A6A6;
+            color: var(--accent);
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 800;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         h1 {
-            color: #17365D;
-            font-size: clamp(34px, 5vw, 52px);
-            line-height: 1.2;
             margin: 15px 0;
+            color: var(--text);
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.12;
+            letter-spacing: -2.8px;
         }
 
         .hero h2 {
-            font-size: 19px;
-            font-weight: normal;
             margin-bottom: 15px;
+            color: #bdc9d9;
+            font-size: 20px;
+            font-weight: 500;
         }
 
         .description {
-            color: #667085;
+            max-width: 610px;
+            color: var(--muted);
             font-size: 15px;
         }
 
@@ -126,53 +147,89 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 19px;
-            border-radius: 7px;
-            text-decoration: none;
+            padding: 13px 21px;
+            border: 1px solid transparent;
+            border-radius: 999px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
         }
 
         .primary {
-            background: #17365D;
-            color: white;
-        }
-
-        .secondary {
-            border: 1px solid #17365D;
-            color: #17365D;
+            background: var(--accent);
+            color: #071410;
+            box-shadow: 0 8px 28px rgba(83, 224, 193, .18);
         }
 
         .primary:hover {
-            background: #00A6A6;
+            background: #76f2d5;
+            box-shadow: 0 12px 34px rgba(83, 224, 193, .28);
+        }
+
+        .secondary {
+            border-color: rgba(148, 163, 184, .32);
+            background: rgba(255, 255, 255, .025);
+            color: var(--text);
+        }
+
+        .secondary:hover {
+            border-color: var(--accent);
         }
 
         .profile {
-            background: linear-gradient(145deg, #17365D, #285782);
-            color: white;
-            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
             padding: 40px 20px;
+            border: 1px solid rgba(148, 163, 184, .2);
+            border-radius: 26px;
+            background: linear-gradient(145deg, #17243b, #101827 70%);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, .35);
             text-align: center;
-            box-shadow: 0 20px 45px #17365D25;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile::before {
+            content: "";
+            position: absolute;
+            top: -130px;
+            right: -90px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: var(--purple);
+            filter: blur(90px);
+            opacity: .35;
         }
 
         .avatar {
+            position: relative;
             width: 120px;
             height: 120px;
-            margin: 0 auto 20px;
             display: grid;
             place-items: center;
-            background: #00A6A6;
-            border: 5px solid white;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(255, 255, 255, .12);
             border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #56b9ef);
+            box-shadow: 0 0 0 9px rgba(83, 224, 193, .08);
+            color: #071410;
             font-size: 38px;
-            font-weight: bold;
+            font-weight: 800;
+        }
+
+        .profile h2 {
+            position: relative;
         }
 
         .profile p {
-            color: #dbe8f5;
-            font-size: 14px;
             margin-top: 8px;
+            color: #b1bfd1;
+            font-size: 14px;
         }
 
         .tags {
@@ -184,54 +241,72 @@
         }
 
         .tags span {
-            background: #ffffff20;
             padding: 5px 10px;
+            border: 1px solid rgba(255, 255, 255, .08);
             border-radius: 20px;
+            background: rgba(255, 255, 255, .07);
+            color: #d3deeb;
             font-size: 12px;
         }
 
         section.content {
-            padding: 75px 0;
+            padding: 92px 0;
         }
 
         .alternate {
-            background: #F4F8FC;
+            border-top: 1px solid rgba(148, 163, 184, .07);
+            border-bottom: 1px solid rgba(148, 163, 184, .07);
+            background: rgba(255, 255, 255, .025);
         }
 
         .section-title {
-            text-align: center;
             margin-bottom: 35px;
+            text-align: center;
         }
 
         .section-title h2 {
-            color: #17365D;
-            font-size: 34px;
             margin-top: 8px;
+            color: var(--text);
+            font-size: clamp(30px, 4vw, 42px);
+            letter-spacing: -1.2px;
         }
 
         .section-title p:last-child {
-            color: #667085;
+            color: var(--muted);
             font-size: 14px;
+        }
+
+        .about-card,
+        .card,
+        .contact-card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: linear-gradient(145deg, rgba(20, 31, 49, .94), rgba(13, 21, 35, .96));
+            box-shadow: 0 14px 40px rgba(0, 0, 0, .12);
         }
 
         .about-card {
             max-width: 850px;
             margin: auto;
-            background: white;
-            border: 1px solid #e5eaf0;
-            border-radius: 15px;
-            padding: 30px;
+            padding: 36px;
+        }
+
+        .about-card h3,
+        .card h3,
+        label {
+            color: var(--text);
         }
 
         .about-card h3 {
-            color: #17365D;
             margin-bottom: 12px;
         }
 
-        .about-card p {
-            color: #667085;
-            font-size: 14px;
+        .about-card p,
+        .card p,
+        .contact-card p {
             margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 14px;
         }
 
         .grid {
@@ -241,61 +316,96 @@
         }
 
         .card {
+            position: relative;
+            overflow: hidden;
             padding: 25px;
-            border: 1px solid #e5eaf0;
-            border-radius: 14px;
-            background: white;
-            transition: 0.3s;
+            transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -65px;
+            right: -65px;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: var(--accent);
+            filter: blur(48px);
+            opacity: 0;
+            transition: opacity .3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px #17365D15;
+            transform: translateY(-7px);
+            border-color: rgba(83, 224, 193, .38);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .26);
+        }
+
+        .card:hover::after {
+            opacity: .22;
         }
 
         .card .icon {
-            font-size: 30px;
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 14px;
+            border: 1px solid rgba(83, 224, 193, .18);
+            border-radius: 15px;
+            background: rgba(83, 224, 193, .08);
+            font-size: 26px;
+            animation: iconBob 3.8s ease-in-out infinite;
+        }
+
+        .card:nth-child(2n) .icon {
+            animation-delay: .45s;
+        }
+
+        .card:nth-child(3n) .icon {
+            animation-delay: .9s;
         }
 
         .card h3 {
-            color: #17365D;
             margin: 10px 0;
-        }
-
-        .card p {
-            color: #667085;
-            font-size: 13px;
         }
 
         .contact-card {
             max-width: 700px;
             margin: auto;
             padding: 30px;
-            border: 1px solid #e5eaf0;
-            border-radius: 15px;
-            background: white;
-        }
-
-        .contact-card p {
-            color: #667085;
-            margin-bottom: 15px;
         }
 
         label {
             display: block;
-            color: #17365D;
-            font-weight: bold;
-            font-size: 13px;
             margin: 12px 0 5px;
+            font-size: 13px;
+            font-weight: 700;
         }
 
         input,
         textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #dce3eb;
-            border-radius: 7px;
+            border: 1px solid rgba(148, 163, 184, .23);
+            border-radius: 10px;
+            outline: none;
+            background: #0b1220;
+            color: var(--text);
             font: inherit;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #718198;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(83, 224, 193, .1);
         }
 
         textarea {
@@ -304,34 +414,49 @@
 
         button.submit {
             margin-top: 18px;
-            border: none;
             cursor: pointer;
             font: inherit;
         }
 
         #status {
             margin-top: 12px;
-            color: #008080;
+            color: var(--accent);
             font-size: 13px;
         }
 
         footer {
-            background: #17365D;
-            color: white;
-            text-align: center;
             padding: 25px 10px;
+            border-top: 1px solid var(--line);
+            background: #060a12;
+            text-align: center;
         }
 
         footer p {
-            color: #dbe8f5;
-            font-size: 12px;
             margin-top: 5px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+        }
+
+        @keyframes iconBob {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-4px) rotate(3deg); }
         }
 
         @media (max-width: 750px) {
             .hero {
+                min-height: auto;
                 grid-template-columns: 1fr;
+                padding: 70px 0;
                 text-align: center;
+            }
+
+            .description {
+                margin: auto;
             }
 
             .buttons {
@@ -347,19 +472,25 @@
             }
 
             .nav-links {
-                display: none;
                 position: absolute;
                 top: 75px;
                 left: 0;
+                display: none;
                 width: 100%;
-                background: white;
                 padding: 20px 5%;
                 flex-direction: column;
-                border-bottom: 1px solid #e5eaf0;
+                border-bottom: 1px solid var(--line);
+                background: rgba(8, 13, 24, .98);
             }
 
             .nav-links.active {
                 display: flex;
+            }
+
+            .profile {
+                width: 100%;
+                max-width: 440px;
+                margin: auto;
             }
         }
 
@@ -372,21 +503,32 @@
                 padding: 55px 0;
             }
 
-            .section-title h2 {
-                font-size: 28px;
+            .about-card,
+            .contact-card {
+                padding: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>
 </head>
 
 <body>
-
 <header>
     <nav class="container">
         <a class="logo" href="#home">Harshita<span>.</span></a>
 
         <button class="menu" id="menu" aria-label="Toggle navigation"
-                aria-expanded="false">☰</button>
+                aria-controls="links" aria-expanded="false">☰</button>
 
         <ul class="nav-links" id="links">
             <li><a href="#home">Home</a></li>
@@ -399,15 +541,11 @@
 </header>
 
 <main>
-
     <section class="hero container" id="home">
-
         <div>
-            <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
-
+            <p class="eyebrow">Welcome to my portfolio</p>
             <h1>Hi, I'm <span class="highlight">Harshita Kathe</span></h1>
-
-            <h2>IT Student & Aspiring Web Developer</h2>
+            <h2>IT Student &amp; Aspiring Web Developer</h2>
 
             <p class="description">
                 I am an Information Technology student passionate about
@@ -426,109 +564,92 @@
             <div class="avatar">HK</div>
             <h2>Harshita Kathe</h2>
             <p>Information Technology Student</p>
-
             <div class="tags">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
             </div>
         </div>
-
     </section>
 
     <section class="content alternate" id="about">
         <div class="container">
-
             <div class="section-title">
-                <p class="eyebrow">GET TO KNOW ME</p>
+                <p class="eyebrow">Get to know me</p>
                 <h2>About <span class="highlight">Me</span></h2>
                 <p>A little introduction about myself.</p>
             </div>
 
             <div class="about-card">
                 <h3>Curious Mind. Creative Thinking.</h3>
-
                 <p>
                     Hello! I'm Harshita Kathe, an Information Technology
                     student interested in programming and web development.
                 </p>
-
                 <p>
                     I enjoy learning new tools, improving my coding skills,
                     and building projects to gain practical experience.
                 </p>
-
                 <p>
                     My goal is to become a skilled IT professional and
                     continue learning new technologies.
                 </p>
             </div>
-
         </div>
     </section>
 
     <section class="content" id="skills">
         <div class="container">
-
             <div class="section-title">
-                <p class="eyebrow">WHAT I'M LEARNING</p>
+                <p class="eyebrow">What I'm learning</p>
                 <h2>My <span class="highlight">Skills</span></h2>
                 <p>Technologies I practise and explore.</p>
             </div>
 
             <div class="grid">
-
                 <div class="card">
                     <div class="icon">🌐</div>
                     <h3>HTML5</h3>
                     <p>Creating the structure of web pages.</p>
                 </div>
-
                 <div class="card">
                     <div class="icon">🎨</div>
                     <h3>CSS3</h3>
                     <p>Designing attractive and responsive websites.</p>
                 </div>
-
                 <div class="card">
                     <div class="icon">⚡</div>
                     <h3>JavaScript</h3>
                     <p>Learning interactive website development.</p>
                 </div>
-
                 <div class="card">
                     <div class="icon">💻</div>
                     <h3>C / C++</h3>
                     <p>Practising programming fundamentals.</p>
                 </div>
-
                 <div class="card">
                     <div class="icon">🐍</div>
                     <h3>Python</h3>
                     <p>Exploring coding and problem-solving.</p>
                 </div>
-
                 <div class="card">
                     <div class="icon">🛠️</div>
                     <h3>GitHub</h3>
                     <p>Learning to manage and publish projects.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section class="content alternate" id="projects">
         <div class="container">
-
             <div class="section-title">
-                <p class="eyebrow">MY LEARNING JOURNEY</p>
+                <p class="eyebrow">My learning journey</p>
                 <h2>Featured <span class="highlight">Projects</span></h2>
                 <p>Projects to showcase my learning and development.</p>
             </div>
 
             <div class="grid">
-
                 <div class="card">
                     <div class="icon">✦</div>
                     <h3>Personal Portfolio</h3>
@@ -537,7 +658,6 @@
                         technical skills, interests, and goals.
                     </p>
                 </div>
-
                 <div class="card">
                     <div class="icon">▦</div>
                     <h3>SKY Dress Material</h3>
@@ -546,7 +666,6 @@
                         materials, collections, and shop information.
                     </p>
                 </div>
-
                 <div class="card">
                     <div class="icon">⌘</div>
                     <h3>Student Grade Management</h3>
@@ -555,67 +674,46 @@
                         information and calculating academic grades.
                     </p>
                 </div>
-
             </div>
 
-            <p style="text-align:center; font-size:12px; margin-top:20px;">
+            <p style="text-align: center; font-size: 12px; margin-top: 20px; color: var(--muted);">
                 Update these descriptions to reflect your actual project status.
             </p>
-
         </div>
     </section>
 
     <section class="content" id="contact">
         <div class="container">
-
             <div class="section-title">
-                <p class="eyebrow">LET'S CONNECT</p>
+                <p class="eyebrow">Let's connect</p>
                 <h2>Contact <span class="highlight">Me</span></h2>
                 <p>Have a project idea? Let's connect.</p>
             </div>
 
             <div class="contact-card">
-                <p>
-                    Fill in this form to try the portfolio's
-                    front-end contact feature.
-                </p>
+                <p>Fill in this form to try the portfolio's front-end contact feature.</p>
 
                 <form id="contactForm">
-
                     <label for="name">Your Name</label>
-                    <input type="text" id="name"
-                           placeholder="Enter your name" required>
+                    <input type="text" id="name" placeholder="Enter your name" required>
 
                     <label for="email">Your Email</label>
-                    <input type="email" id="email"
-                           placeholder="Enter your email" required>
+                    <input type="email" id="email" placeholder="Enter your email" required>
 
                     <label for="message">Your Message</label>
-                    <textarea id="message" rows="4"
-                              placeholder="Write your message"
-                              required></textarea>
+                    <textarea id="message" rows="4" placeholder="Write your message" required></textarea>
 
-                    <button class="btn primary submit" type="submit">
-                        Send Message
-                    </button>
-
+                    <button class="btn primary submit" type="submit">Send Message</button>
                     <p id="status" role="status" aria-live="polite"></p>
-
                 </form>
             </div>
-
         </div>
     </section>
-
 </main>
 
 <footer>
-    <a class="logo" href="#home" style="color:white;">
-        Harshita<span>.</span>
-    </a>
-
+    <a class="logo" href="#home">Harshita<span>.</span></a>
     <p>Learning, creating, and growing every day.</p>
-
     <p>© <span id="year"></span> Harshita Kathe. All rights reserved.</p>
 </footer>
 
@@ -625,7 +723,6 @@
 
     menu.addEventListener("click", function () {
         const open = links.classList.toggle("active");
-
         menu.textContent = open ? "✕" : "☰";
         menu.setAttribute("aria-expanded", open);
     });
@@ -638,36 +735,25 @@
         });
     });
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("contactForm").addEventListener(
-        "submit",
-        function (event) {
-            event.preventDefault();
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            const name = document.getElementById("name").value.trim();
-            const message = document.getElementById("message").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const status = document.getElementById("status");
 
-            if (!name || !message) {
-                document.getElementById("status").textContent =
-                    "Please fill in all fields.";
-                return;
-            }
-
-            document.getElementById("status").textContent =
-                "Thank you, " + name +
-                "! This demo form does not send messages yet.";
-
-            this.reset();
+        if (!name || !message) {
+            status.textContent = "Please fill in all fields.";
+            return;
         }
-    );
-</script>
 
+        status.textContent = "Thank you, " + name +
+            "! This demo form does not send messages yet.";
+
+        this.reset();
+    });
+</script>
 </body>
 </html>
-
-
-
-
-
